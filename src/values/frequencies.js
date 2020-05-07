@@ -5,6 +5,7 @@ const frequencies = {
     "BiWeekly": 26,
     "Monthly": 12,
     "Quarterly": 4,
+    "SemiAnnually": 2,
     "Yearly": 1
 };
 
