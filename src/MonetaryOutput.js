@@ -20,10 +20,15 @@ const MonetaryOutput = ({monetaryValues, timeframe}) => {
     }
 
     const formatMoney = (value, color = null) => {
+        if (isNaN(value)) {
+            return <span style={{color: "darkred"}}>
+                Why did you break it? Just use numbers and periods.
+            </span>
+        }
         if (color) {
             return <span style={{color: color}}>
-            ${value.toFixed(2)}
-        </span>
+                ${value.toFixed(2)}
+            </span>
         }
         return <span style={{color: value >= 0 ? "green" : "darkred"}}>
             ${value.toFixed(2)}
