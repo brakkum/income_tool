@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import MonthlyIncomeTool from './MonthlyIncomeTool';
 import * as serviceWorker from './serviceWorker';
+import ReactDOM from 'react-dom';
+import 'bulma/css/bulma.css'
+import React from 'react';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <MonthlyIncomeTool />
   </React.StrictMode>,
   document.getElementById('root')
 );
