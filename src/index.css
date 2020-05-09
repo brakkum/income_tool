@@ -1,6 +1,15 @@
 
 .hero-buttons {
   justify-content: center;
+  margin-top: .5rem;
+}
+
+.button-red {
+  background-color: #fcd2d2;
+}
+
+.button-green {
+  background-color: #b6f6b6;
 }
 
 .margin-bottom-fix {
@@ -17,6 +26,11 @@
   width: 90%;
   max-width: 450px;
   margin: 5px 5px 10px 5px !important;
+}
+
+.box-upper-right {
+  width: 30%;
+  justify-content: space-between;
 }
 
 .is-bordered-red {

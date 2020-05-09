@@ -7,6 +7,7 @@ const MonetaryOutput = ({monetaryValues, timeframe}) => {
     let expenses = 0;
 
     for (let monetaryItem of monetaryValues) {
+        if (!monetaryItem.active) continue;
         let timesPerYear = frequencies[monetaryItem.frequency];
         let value = monetaryItem.value;
         let type = monetaryItem.type;

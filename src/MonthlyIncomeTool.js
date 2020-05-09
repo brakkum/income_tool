@@ -13,9 +13,10 @@ const MonthlyIncomeTool = () => {
     const addNewMonetaryItem = type => {
         setMonetaryValues([...monetaryValues, {
             "type": type,
-            "name": `New ${type}`,
+            "name": "",
             "value": 0,
             "frequency": "BiWeekly",
+            "active": true
         }]);
     };
 
@@ -43,6 +44,12 @@ const MonthlyIncomeTool = () => {
         }))
     };
 
+    const toggleMonetaryItemActive = index => {
+        let items = monetaryValues;
+        items[index].active = !items[index].active;
+        setMonetaryValues([...items]);
+    };
+
     return <main className="">
         <div className="section">
             <h3 className="is-size-3 has-text-centered">{timeframe} Totals</h3>
@@ -60,8 +67,8 @@ const MonthlyIncomeTool = () => {
             </div>
         </div>
         <div className="has-text-centered buttons hero-buttons">
-            <button className="button margin-bottom-fix" onClick={() => addNewMonetaryItem("expense")}>New Expense</button>
-            <button className="button margin-bottom-fix" onClick={() => addNewMonetaryItem("income")}>New Income</button>
+            <button className="button margin-bottom-fix button-red" onClick={() => addNewMonetaryItem("expense")}>New Expense</button>
+            <button className="button margin-bottom-fix button-green" onClick={() => addNewMonetaryItem("income")}>New Income</button>
         </div>
         <div className="">
             <div className="is-flex monetary-items">
@@ -73,6 +80,7 @@ const MonthlyIncomeTool = () => {
                             setMonetaryItemName={setMonetaryItemName}
                             setMonetaryItemValue={setMonetaryItemValue}
                             setMonetaryItemFrequency={setMonetaryItemFrequency}
+                            toggleMonetaryItemActive={toggleMonetaryItemActive}
                             index={i}
                             key={i}
                         />
